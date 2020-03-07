@@ -1,8 +1,8 @@
-require_relative '../entity'
+require_relative '../spec/spec'
 
 # パラメーター生成に必要な要素を持つエンティティ
 class ParameterSpec
-  include Entity
+  include Spec
 
   attr_reader :parameter_name,
               :decorator,

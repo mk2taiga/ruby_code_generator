@@ -1,8 +1,8 @@
-require_relative '../entity'
+require_relative '../spec/spec'
 
 # クラスに必要な要素をもつエンティティ
 class ClassSpec
-  include Entity
+  include Spec
 
   attr_reader :packages,
               :decorator,

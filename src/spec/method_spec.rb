@@ -1,8 +1,8 @@
-require_relative '../entity'
+require_relative '../spec/spec'
 
 # メソッドに必要な要素を持つエンティティ
 class MethodSpec
-  include Entity
+  include Spec
 
   attr_reader :method_name,
               :decorator,
