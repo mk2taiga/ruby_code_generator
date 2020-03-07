@@ -1,72 +1,52 @@
-require_relative '../spec/spec'
+require_relative 'spec'
 
 # クラスに必要な要素をもつエンティティ
 class ClassSpec
   include Spec
 
-  attr_reader :packages,
-              :decorator,
+  attr_reader :modules,
               :class_name,
-              :generics,
               :extend_class,
-              :implement_classes,
+              :include_modules,
               :parameters,
-              :methods,
-              :inner_classes
+              :methods
 
 
   def initialize
-    @packages = []
-    @extend_class = []
-    @implement_classes = []
+    @modules = []
+    @include_modules = []
     @parameters = []
     @methods = []
-    @inner_classes = []
   end
 
-  # 引数は文字列で頼む
-  def add_package(package)
-    @packages.push(package)
+  # @param[String]
+  def add_module(module_name)
+    @modules.push(module_name)
   end
 
-  # 引数は文字列で頼む
-  def set_decorator(decorator)
-    @decorator = decorator
+  # @param[String]
+  def set_class_name(name)
+    @class_name = name
   end
 
-  # 引数は文字列で頼む
-  def set_class_name(class_name)
-    @class_name = class_name
+  # @param[String]
+  def add_extends__class(class_name)
+    @extend_class.push(class_name)
   end
 
-  # 引数は文字列で頼む
-  # クラス名<generics>になる
-  def set_generics(generics)
-    @generics = generics
+  # @param[String]
+  def add_include_module(module_name)
+    @include_modules.push(module_name)
   end
 
-  # 引数は文字列で頼む
-  def set_extend_class(class_name)
-    @extend_class = class_name
-  end
-
-  # 引数は文字列で頼む
-  def add_implement_class(class_name)
-    @implement_classes.push(class_name)
-  end
-
-  # parameter_specくれ
+  # @param[ParameterSpec]
   def add_parameter(parameter)
     @parameters.push(parameter)
   end
 
-  # method_specくれ
+  # @param[MethodSpec]
   def add_method(method)
     @methods.push(method)
   end
-
-  # class_specくれ
-  def add_inner_class(class_spec)
-    @inner_classes.push(class_spec)
-  end
+  
 end

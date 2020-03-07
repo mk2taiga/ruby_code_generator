@@ -1,4 +1,4 @@
-require_relative '../spec/spec'
+require_relative 'spec'
 
 # メソッドに必要な要素を持つエンティティ
 class MethodSpec
@@ -6,45 +6,31 @@ class MethodSpec
 
   attr_reader :method_name,
               :decorator,
-              :generics,
               :parameters,
-              :contents,
-              :return_type
-
+              :contents
 
   def initialize
     @parameters = []
     @contents = []
   end
 
-  # 引数は文字列で頼む
+  # @param[String]
   def set_method_name(name)
     @method_name = name
   end
 
-  # 引数は文字列で頼む
+  # @param[Decorator]
   def set_decorator(decorator)
     @decorator = decorator
   end
 
-  # 引数は文字列で頼む
-  # public <generics> void　メソッド名 みたいになる
-  def set_generics(generics)
-    @generics = generics
-  end
-
-  # parameter_specくれ
+  # @param[ParamSpec]
   def add_parameter(parameter)
     @parameters.push(parameter)
   end
 
-  # 引数は文字列で頼む
+  # @param[String]
   def add_content(content)
     @contents.push(content)
-  end
-
-  # 引数は文字列で頼む
-  def set_return_type(type)
-    @return_type = type
   end
 end

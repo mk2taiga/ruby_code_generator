@@ -1,25 +1,19 @@
-require_relative '../spec/spec'
+require_relative 'spec'
 
 # パラメーター生成に必要な要素を持つエンティティ
 class ParameterSpec
   include Spec
 
   attr_reader :parameter_name,
-              :decorator,
-              :type
+              :decorator
 
-  # 引数は文字列で頼む
+  # @param[String]
   def set_parameter(name)
     @parameter_name = name
   end
 
-  # 引数は文字列で頼む
+  # @param[Decorator]
   def set_decorator(decorator)
     @decorator = decorator
-  end
-
-  # 引数は文字列で頼む
-  def set_type(type)
-    @type = type
   end
 end
