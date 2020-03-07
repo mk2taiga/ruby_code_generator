@@ -1,13 +1,15 @@
 require_relative 'spec'
+require_relative 'builder'
 
 # クラスに必要な要素をもつエンティティ
 class ClassSpec
-  include Spec
+  include Spec, Builder
 
   attr_reader :modules,
               :class_name,
               :extend_class,
               :include_modules,
+              :inner_classes,
               :parameters,
               :methods
 
@@ -15,6 +17,7 @@ class ClassSpec
   def initialize
     @modules = []
     @include_modules = []
+    @inner_classes = []
     @parameters = []
     @methods = []
   end
@@ -39,6 +42,11 @@ class ClassSpec
     @include_modules.push(module_name)
   end
 
+  # @param[ClassSpec]
+  def add_inner_class(class_spec)
+    @inner_classes.push(class_spec)
+  end
+
   # @param[ParameterSpec]
   def add_parameter(parameter)
     @parameters.push(parameter)
@@ -47,6 +55,10 @@ class ClassSpec
   # @param[MethodSpec]
   def add_method(method)
     @methods.push(method)
+  end
+
+  def build
+    puts 'ファイル生成処理を行う'
   end
   
 end

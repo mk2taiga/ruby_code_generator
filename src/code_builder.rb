@@ -1,17 +1,16 @@
-require 'spec'
+require_relative 'builder'
 
 # ファイル生成に必要な要素を持つエンティティ
-class FileSpec
-  include Spec
+class CodeBuilder
+  include Builder
   
   attr_reader :requires,
               :require_relatives,
-              :classes
+              :class
 
   def initialize
     @requires = []
     @require_relatives = []
-    @classes = []
   end
 
   # @param[String]
@@ -25,8 +24,12 @@ class FileSpec
   end
 
   # @param[ClassSpec]
-  def add_class(class_spec)
-    @classes.push(class_spec)
+  def set_class(class_spec)
+    @class = class_spec
+  end
+
+  def build
+    puts 'ファイル生成処理を行う'
   end
 
 end

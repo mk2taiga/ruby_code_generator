@@ -1,8 +1,9 @@
 require_relative 'spec'
+require_relative 'builder'
 
 # メソッドに必要な要素を持つエンティティ
 class MethodSpec
-  include Spec
+  include Spec, Builder
 
   attr_reader :method_name,
               :decorator,
@@ -32,5 +33,9 @@ class MethodSpec
   # @param[String]
   def add_content(content)
     @contents.push(content)
+  end
+
+  def build
+    puts 'ファイル生成処理を行う'
   end
 end
