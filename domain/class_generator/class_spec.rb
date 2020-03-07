@@ -7,9 +7,10 @@ class ClassSpec
   attr_reader :packages,
               :decorator,
               :class_name,
-              :type,
+              :generics,
               :extend_class,
               :implement_classes,
+              :parameters,
               :methods,
               :inner_classes
 
@@ -18,25 +19,30 @@ class ClassSpec
     @packages = []
     @extend_class = []
     @implement_classes = []
+    @parameters = []
     @methods = []
     @inner_classes = []
   end
 
-  def set_package(package)
+  # 引数は文字列で頼む
+  def add_package(package)
     @packages.push(package)
   end
 
-  def add_decorator(decorator)
+  # 引数は文字列で頼む
+  def set_decorator(decorator)
     @decorator = decorator
   end
 
+  # 引数は文字列で頼む
   def set_class_name(class_name)
     @class_name = class_name
   end
 
   # 引数は文字列で頼む
-  def set_generics(type)
-    type = type
+  # クラス名<generics>になる
+  def set_generics(generics)
+    @generics = generics
   end
 
   # 引数は文字列で頼む
@@ -49,10 +55,17 @@ class ClassSpec
     @implement_classes.push(class_name)
   end
 
+  # parameter_specくれ
+  def add_parameter(parameter)
+    @parameters.push(parameter)
+  end
+
+  # method_specくれ
   def add_method(method)
     @methods.push(method)
   end
 
+  # class_specくれ
   def add_inner_class(class_spec)
     @inner_classes.push(class_spec)
   end
