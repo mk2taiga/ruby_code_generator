@@ -1,9 +1,7 @@
 require_relative 'spec'
-require_relative 'builder'
 
 # パラメーター生成に必要な要素を持つエンティティ
-class ParameterSpec
-  include Spec, Builder
+class ParameterSpec < Spec
 
   attr_reader :parameter_name,
               :decorator

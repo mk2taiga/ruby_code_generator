@@ -1,9 +1,7 @@
 require_relative 'spec'
-require_relative 'builder'
 
 # メソッドに必要な要素を持つエンティティ
-class MethodSpec
-  include Spec, Builder
+class MethodSpec < Spec
 
   attr_reader :method_name,
               :decorator,

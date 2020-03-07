@@ -1,0 +1,2 @@
+module Entity
+end

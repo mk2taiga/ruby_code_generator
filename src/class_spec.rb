@@ -1,11 +1,10 @@
 require_relative 'spec'
-require_relative 'builder'
 
 # クラスに必要な要素をもつエンティティ
-class ClassSpec
-  include Spec, Builder
+class ClassSpec < Spec
 
-  attr_reader :modules,
+  attr_reader :imports,
+              :modules,
               :class_name,
               :extend_class,
               :include_modules,
@@ -15,11 +14,17 @@ class ClassSpec
 
 
   def initialize
+    @imports = []
     @modules = []
     @include_modules = []
     @inner_classes = []
     @parameters = []
     @methods = []
+  end
+
+  # @param[ImportSpec]
+  def add_import(import)
+    @imports.push(import)
   end
 
   # @param[String]

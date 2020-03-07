@@ -1,12 +1,10 @@
-require_relative 'builder'
+require_relative 'spec'
 
 # ファイル生成に必要な要素を持つエンティティ
-class CodeSpec
-  include Builder
+class ImportSpec < Spec
   
   attr_reader :requires,
-              :require_relatives,
-              :class
+              :require_relatives
 
   def initialize
     @requires = []
@@ -21,11 +19,6 @@ class CodeSpec
   # @param[String]
   def add_require_relative(require_relative)
     @require_relatives.push(require_relative)
-  end
-
-  # @param[ClassSpec]
-  def set_class(class_spec)
-    @class = class_spec
   end
 
   def build
