@@ -1,9 +1,9 @@
 # コードを書き出す
 class CodeWriter
 
-  # @param[CodeBuilder]
+  # @param[CodeSpec]
   # @param[String]
-  def write(builder, create_path)
+  def write(spec, create_path)
     puts '書き出し処理実装するよ'
   end
 

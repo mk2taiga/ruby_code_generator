@@ -1,7 +1,7 @@
 require_relative 'builder'
 
 # ファイル生成に必要な要素を持つエンティティ
-class CodeBuilder
+class CodeSpec
   include Builder
   
   attr_reader :requires,
