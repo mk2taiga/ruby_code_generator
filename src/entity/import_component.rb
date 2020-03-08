@@ -10,7 +10,7 @@ class ImportComponent < Component
 
   # @return[String]
   def to_code
-    puts 'ファイル生成処理を行う'
+    @require_type + ' ' + @require_path
   end
 
 end
