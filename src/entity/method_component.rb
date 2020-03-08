@@ -10,8 +10,41 @@ class MethodComponent < Component
     @contents = contents
   end
 
+  def get_decorator
+    @decorator
+  end
+
   # @return[String]
   def to_code
-    puts 'ファイル生成処理を行う'
+    method = [
+        create_method_define,
+        creat_method_content,
+        'end'
+    ].join("\n")
+  end
+
+  private
+
+  def create_method_define
+    define = 'def ' + @method_name
+    unless @parameters.empty?
+      define << '('
+
+      @parameters.each_with_index do |param, index|
+        if index == 0
+          define << param
+          next
+        end
+        define << ', ' + param
+      end
+
+      define << ')'
+    end
+
+    define
+  end
+
+  def creat_method_content
+    @contents.join("\n")
   end
 end

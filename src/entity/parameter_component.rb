@@ -8,6 +8,10 @@ class ParameterComponent < Component
     @decorator = decorator
   end
 
+  def get_decorator
+    @decorator
+  end
+
   # @return[String]
   def to_code
     @parameter_name
