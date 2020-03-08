@@ -12,10 +12,7 @@ class_builder = ClassBuilder.new
 
 imports = []
 import_builder.set_require(Decorator::REQUIRE_RELATIVE)
-import_builder.set_require_path("./src/builder/method_builder")
-class_builder.add_import(import_builder.build)
-
-import_builder.set_require_path("./src/builder/parameter_builder")
+import_builder.set_require_path("./src/fuga")
 class_builder.add_import(import_builder.build)
 
 method_builder.set_method_name("output_test")
@@ -35,4 +32,4 @@ class_builder.add_method(method_builder.build)
 class_builder.set_class_name('Hoge')
 
 writer = CodeWriter.new
-writer.write(class_builder.build, './src/hoge/fuga')
+writer.write(class_builder.build, './hoge.rb')
