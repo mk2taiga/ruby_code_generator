@@ -1,28 +1,21 @@
-require_relative 'spec'
+require_relative 'builder'
+require_relative '../entity/class_component'
 
-# クラスに必要な要素をもつエンティティ
-class ClassSpec < Spec
+# ClassSpec生成Builder
+class ClassBuilder
+  include Builder
 
-  attr_reader :imports,
-              :modules,
-              :class_name,
-              :extend_class,
-              :include_modules,
-              :inner_classes,
-              :parameters,
-              :methods
-
-
-  def initialize
+  def initialize(aa)
     @imports = []
     @modules = []
+    @class_name = nil
     @include_modules = []
     @inner_classes = []
     @parameters = []
     @methods = []
   end
 
-  # @param[ImportSpec]
+  # @param[ImportComponent]
   def add_import(import)
     @imports.push(import)
   end
@@ -52,18 +45,19 @@ class ClassSpec < Spec
     @inner_classes.push(class_spec)
   end
 
-  # @param[ParameterSpec]
+  # @param[ParameterComponent]
   def add_parameter(parameter)
     @parameters.push(parameter)
   end
 
-  # @param[MethodSpec]
+  # @param[MethodComponent]
   def add_method(method)
     @methods.push(method)
   end
 
-  def to_code
-    puts 'ファイル生成処理を行う'
+  # @return[ClassComponent]
+  def build
+    ClassComponent.new(@imports, @modules, @class_name, @extend_class, @include_modules, @inner_classes, @parameters, @methods)
   end
-  
+
 end

@@ -1,7 +1,7 @@
-require_relative 'spec'
+require_relative 'component'
 
 # パラメーター生成に必要な要素を持つエンティティ
-class ParameterSpec < Spec
+class ParameterSpec < Component
 
   attr_reader :parameter_name,
               :decorator

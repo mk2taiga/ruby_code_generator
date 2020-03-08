@@ -1,7 +1,7 @@
-require_relative 'spec'
+require_relative 'component'
 
 # メソッドに必要な要素を持つエンティティ
-class MethodSpec < Spec
+class MethodSpec < Component
 
   attr_reader :method_name,
               :decorator,

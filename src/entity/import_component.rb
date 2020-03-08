@@ -1,7 +1,7 @@
-require_relative 'spec'
+require_relative 'component'
 
 # ファイル生成に必要な要素を持つエンティティ
-class ImportSpec < Spec
+class ImportSpec < Component
   
   attr_reader :requires,
               :require_relatives
