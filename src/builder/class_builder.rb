@@ -5,11 +5,11 @@ require_relative '../entity/class_component'
 class ClassBuilder
   include Builder
 
-  def initialize()
+  def initialize
     @imports = []
     @modules = []
     @class_name = nil
-    @extend_class = []
+    @extend_class = nil
     @include_modules = []
     @inner_classes = []
     @parameters = []
@@ -33,7 +33,7 @@ class ClassBuilder
 
   # @param[String]
   def add_extends_class_name(class_name)
-    @extend_class.push(class_name)
+    @extend_class = class_name
   end
 
   # @param[String]

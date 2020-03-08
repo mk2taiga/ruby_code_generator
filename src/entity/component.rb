@@ -1,3 +1,5 @@
+require_relative 'entity'
+
 # コード生成モジュール
 class Component
   include Entity

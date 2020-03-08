@@ -32,10 +32,10 @@ class MethodComponent < Component
 
       @parameters.each_with_index do |param, index|
         if index == 0
-          define << param
+          define << param.to_code
           next
         end
-        define << ', ' + param
+        define << ', ' + param.to_code
       end
 
       define << ')'

@@ -37,7 +37,7 @@ class ClassComponent < Component
     end
 
     class_define.push('end')
-    class_define.push('end') unless @modules.empty?
+    class_define.push('end') unless @module_names.empty?
     
     class_define.join("\n")
   end
@@ -59,8 +59,7 @@ class ClassComponent < Component
 
     import_list.push(require_list.join("\n"))
     import_list.push(require_relative_list.join("\n"))
-
-    import_list
+    import_list.join("\n")
   end
 
   def create_class_define
@@ -103,10 +102,10 @@ class ClassComponent < Component
     unless read_only.empty?
       read_only.each_with_index do |param, index|
         if index == 0
-          read_define << param.to_code
+          read_define << ':' + param.to_code
           next
         end
-        read_define << ', ' + param.to_code
+        read_define << ', :' + param.to_code
       end
 
       param_list.push(read_define)
@@ -115,10 +114,10 @@ class ClassComponent < Component
     unless write_only.empty?
       write_only.each_with_index do |param, index|
         if index == 0
-          write_define << param.to_code
+          write_define << ':' + param.to_code
           next
         end
-        write_define << ', ' + param.to_code
+        write_define << ', :' + param.to_code
       end
 
       param_list.push(write_define)
@@ -127,10 +126,10 @@ class ClassComponent < Component
     unless read_and_write.empty?
       read_and_write.each_with_index do |param, index|
         if index == 0
-          read_and_write_define << param.to_code
+          read_and_write_define << ':' + param.to_code
           next
         end
-        read_and_write_define << ', ' + param.to_code
+        read_and_write_define << ', :' + param.to_code
       end
 
       param_list.push(read_and_write_define)

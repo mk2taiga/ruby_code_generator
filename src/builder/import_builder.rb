@@ -23,7 +23,7 @@ class ImportBuilder
   # @return[ImportComponent]
   def build
     raise 'require_typeとrequire_pathをセットしてください' if @require_type == nil || @require_path == nil
-    ImportComponent.new(@require_path, @require_path)
+    ImportComponent.new(@require_type, @require_path)
   end
 
 end
