@@ -5,7 +5,7 @@ require_relative '../entity/class_component'
 class ClassBuilder
   include Builder
 
-  def initialize(aa)
+  def initialize()
     @imports = []
     @modules = []
     @class_name = nil
