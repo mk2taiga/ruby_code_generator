@@ -26,13 +26,13 @@ method_builder.add_parameter(parameter_builder.build)
 method_builder.add_content("puts input + ':' + output")
 
 parameter_builder.set_decorator(Decorator::READ_ONLY)
-parameter_builder.set_parameter("hoge")
+parameter_builder.set_parameter("hoge_param")
 class_builder.add_parameter(parameter_builder.build)
 
-class_builder.add_extends_class_name("Builder")
+class_builder.add_extends_class_name("Fuga")
 class_builder.add_method(method_builder.build)
 
 class_builder.set_class_name('Hoge')
 
 writer = CodeWriter.new
-writer.write(class_builder.build, './src/builder/')
+writer.write(class_builder.build, './src/hoge/fuga')
