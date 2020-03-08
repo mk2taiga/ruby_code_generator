@@ -1,38 +1,16 @@
 require_relative 'component'
 
 # メソッドに必要な要素を持つエンティティ
-class MethodSpec < Component
+class MethodComponent < Component
 
-  attr_reader :method_name,
-              :decorator,
-              :parameters,
-              :contents
-
-  def initialize
-    @parameters = []
-    @contents = []
-  end
-
-  # @param[String]
-  def set_method_name(name)
-    @method_name = name
-  end
-
-  # @param[Decorator]
-  def set_decorator(decorator)
+  def initialize(method_name, decorator, parameters, contents)
+    @method_name = method_name
     @decorator = decorator
+    @parameters = parameters
+    @contents = contents
   end
 
-  # @param[ParamSpec]
-  def add_parameter(parameter)
-    @parameters.push(parameter)
-  end
-
-  # @param[String]
-  def add_content(content)
-    @contents.push(content)
-  end
-
+  # @return[String]
   def to_code
     puts 'ファイル生成処理を行う'
   end
