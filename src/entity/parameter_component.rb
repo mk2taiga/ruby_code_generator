@@ -10,6 +10,6 @@ class ParameterComponent < Component
 
   # @return[String]
   def to_code
-    puts 'ファイル生成処理を行う'
+    @parameter_name
   end
 end
