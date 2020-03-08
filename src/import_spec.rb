@@ -21,7 +21,7 @@ class ImportSpec < Spec
     @require_relatives.push(require_relative)
   end
 
-  def build
+  def to_code
     puts 'ファイル生成処理を行う'
   end
 

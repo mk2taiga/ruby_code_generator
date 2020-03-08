@@ -16,7 +16,7 @@ class ParameterSpec < Spec
     @decorator = decorator
   end
 
-  def build
+  def to_code
     puts 'ファイル生成処理を行う'
   end
 end

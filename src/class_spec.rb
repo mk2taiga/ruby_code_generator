@@ -62,7 +62,7 @@ class ClassSpec < Spec
     @methods.push(method)
   end
 
-  def build
+  def to_code
     puts 'ファイル生成処理を行う'
   end
   
