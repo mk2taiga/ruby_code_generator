@@ -57,6 +57,7 @@ class ClassBuilder
 
   # @return[ClassComponent]
   def build
+    raise 'class_nameをセットしてください' if @class_name == nil
     ClassComponent.new(@imports, @modules, @class_name, @extend_class, @include_modules, @inner_classes, @parameters, @methods)
   end
 

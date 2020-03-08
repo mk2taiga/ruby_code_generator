@@ -7,7 +7,7 @@ class MethodBuilder
 
   def initialize
     @method_name = nil
-    @decorator = nil
+    @decorator = Decorator::PUBLIC
     @parameters = []
     @contents = []
   end
@@ -34,6 +34,7 @@ class MethodBuilder
 
   # @return[MethodComponent]
   def build
+    raise 'method_nameをセットしてください' if @method_name == nil
     MethodComponent.new(@method_name, @decorator, @parameters, @contents)
   end
 

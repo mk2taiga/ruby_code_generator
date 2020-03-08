@@ -7,7 +7,7 @@ class ParameterBuilder
 
   def initialize
     @parameter_name = nil
-    @decorator = nil
+    @decorator = Decorator::READ_ONLY
   end
 
   # @param[String]
@@ -22,6 +22,7 @@ class ParameterBuilder
 
   # @return[ParameterComponent]
   def build
+    raise 'parameter_nameをセットしてください' if @parameter_name == nil
     ParameterComponent.new(@parameter_name, @decorator)
   end
 
