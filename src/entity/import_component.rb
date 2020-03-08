@@ -1,24 +1,11 @@
 require_relative 'component'
 
 # ファイル生成に必要な要素を持つエンティティ
-class ImportSpec < Component
-  
-  attr_reader :requires,
-              :require_relatives
+class ImportComponent < Component
 
-  def initialize
-    @requires = []
-    @require_relatives = []
-  end
-
-  # @param[String]
-  def add_require(require)
-    @requires.push(require)
-  end
-
-  # @param[String]
-  def add_require_relative(require_relative)
-    @require_relatives.push(require_relative)
+  def initialize(type, path)
+    @require_type = type
+    @require_path = path
   end
 
   def to_code
