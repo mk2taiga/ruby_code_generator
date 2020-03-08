@@ -14,7 +14,7 @@ class ImportComponent < Component
 
   # @return[String]
   def to_code
-    @require_type + ' ' + @require_path
+    @require_type + ' ' + "'#{@require_path}'"
   end
 
 end
