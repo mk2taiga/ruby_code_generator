@@ -8,6 +8,10 @@ class ImportComponent < Component
     @require_path = path
   end
 
+  def get_require_type
+    @require_type
+  end
+
   # @return[String]
   def to_code
     @require_type + ' ' + @require_path

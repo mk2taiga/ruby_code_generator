@@ -14,6 +14,6 @@ class ParameterComponent < Component
 
   # @return[String]
   def to_code
-    @parameter_name
+    ':' + @parameter_name
   end
 end

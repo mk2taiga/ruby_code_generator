@@ -9,6 +9,7 @@ class ClassBuilder
     @imports = []
     @modules = []
     @class_name = nil
+    @extend_class = []
     @include_modules = []
     @inner_classes = []
     @parameters = []
@@ -31,12 +32,12 @@ class ClassBuilder
   end
 
   # @param[String]
-  def add_extends__class(class_name)
+  def add_extends_class_name(class_name)
     @extend_class.push(class_name)
   end
 
   # @param[String]
-  def add_include_module(module_name)
+  def add_include_module_name(module_name)
     @include_modules.push(module_name)
   end
 
