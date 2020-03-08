@@ -1,4 +1,5 @@
 require_relative 'builder'
+require_relative '../entity/import_component'
 
 # ImportSpec生成クラス
 class ImportBuilder

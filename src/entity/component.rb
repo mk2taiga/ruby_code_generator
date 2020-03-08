@@ -1,5 +1,5 @@
 # コード生成モジュール
-class Spec
+class Component
   include Entity
 
   # コードを生成します

@@ -1,4 +1,5 @@
 require_relative 'builder'
+require_relative '../entity/method_component'
 
 # MethodSpec生成クラス
 class MethodBuilder

@@ -8,6 +8,7 @@ class ImportComponent < Component
     @require_path = path
   end
 
+  # @return[String]
   def to_code
     puts 'ファイル生成処理を行う'
   end
